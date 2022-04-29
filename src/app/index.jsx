@@ -1,11 +1,14 @@
 import React from "react";
 import GlobalStyle, { Container } from "./styles";
+import Header from "../components/header";
 
 function App() {
   return (
     <React.Fragment>
       <GlobalStyle />
-      <Container>Remote Work!</Container>
+      <Container>
+        <Header />
+      </Container>
     </React.Fragment>
   );
 }

@@ -23,6 +23,11 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 500;
     line-height: 1.3;
   }
+
+  a {
+    color: var(--gray);
+    text-decoration: none;
+  }
 `;
 
 const Container = styled.div`
