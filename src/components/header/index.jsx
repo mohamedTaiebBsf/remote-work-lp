@@ -1,18 +1,16 @@
 import React from "react";
-import Menu from "../navigation/menu";
-import { Container, Link, Logo, Wrapper } from "./styles";
+import Navigation from "../navigation";
+import Hamburger from "../navigation/sideDrawer/hamburger";
+import { Container, Logo, Wrapper } from "./styles";
 
-function Header() {
+function Header({ sideDrawerOpened, onSideDrawerClick }) {
   return (
     <Container>
       <Logo src="assets/images/logo.svg" alt="logo" />
       <Wrapper>
-        <Menu />
-        <div>
-          <Link href="#">login</Link>
-          <Link href="#">register</Link>
-        </div>
+        <Navigation />
       </Wrapper>
+      <Hamburger toggleSideDrawer={onSideDrawerClick} open={sideDrawerOpened} />
     </Container>
   );
 }
