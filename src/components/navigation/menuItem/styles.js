@@ -39,6 +39,8 @@ const Icon = styled.img`
 
   &.subicon {
     margin-right: 16px;
+    width: 18px;
+    height: 18px;
   }
 `;
 
@@ -61,6 +63,11 @@ const Wrapper = styled.div`
 
   &:hover {
     color: var(--black);
+  }
+
+  &:hover ${Icon}:not(.subicon) {
+    filter: invert(0%) sepia(18%) saturate(9%) hue-rotate(319deg)
+      brightness(50%) contrast(90%);
   }
 `;
 

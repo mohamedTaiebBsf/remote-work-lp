@@ -1,6 +1,6 @@
 import React from "react";
 import Menu from "../navigation/menu";
-import { Container, Logo, Wrapper } from "./styles";
+import { Container, Link, Logo, Wrapper } from "./styles";
 
 function Header() {
   return (
@@ -8,7 +8,10 @@ function Header() {
       <Logo src="assets/images/logo.svg" alt="logo" />
       <Wrapper>
         <Menu />
-        <div>Buttons</div>
+        <div>
+          <Link href="#">login</Link>
+          <Link href="#">register</Link>
+        </div>
       </Wrapper>
     </Container>
   );

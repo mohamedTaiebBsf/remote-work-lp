@@ -27,6 +27,7 @@ const GlobalStyle = createGlobalStyle`
   a {
     color: var(--gray);
     text-decoration: none;
+    cursor: pointer;
   }
 `;
 
