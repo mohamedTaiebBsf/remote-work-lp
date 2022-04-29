@@ -32,7 +32,9 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Container = styled.div`
-  height: 100vh;
+  min-height: 100vh;
+  max-width: 1440px;
+  margin: auto;
 `;
 
 export default GlobalStyle;
