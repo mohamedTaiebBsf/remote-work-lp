@@ -1,12 +1,18 @@
 import React from "react";
 import Navigation from "../navigation";
 import Hamburger from "../navigation/sideDrawer/hamburger";
-import { Container, Logo, Wrapper } from "./styles";
+import { Container, Logo, logoAnim, Wrapper } from "./styles";
 
 function Header({ sideDrawerOpened, onSideDrawerClick }) {
   return (
     <Container>
-      <Logo src="assets/images/logo.svg" alt="logo" />
+      <Logo
+        variants={logoAnim}
+        initial="hidden"
+        animate="show"
+        src="assets/images/logo.svg"
+        alt="logo"
+      />
       <Wrapper>
         <Navigation />
       </Wrapper>

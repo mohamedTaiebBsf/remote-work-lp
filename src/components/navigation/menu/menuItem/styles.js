@@ -1,6 +1,7 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
-const SubMenu = styled.div`
+const SubMenu = styled(motion.div)`
   background-color: var(--white);
   margin-top: 20px;
   margin-left: 20px;
@@ -89,4 +90,10 @@ const Wrapper = styled.div`
   }
 `;
 
-export { Container, Icon, Label, Link, SubMenu, Wrapper };
+const subMenuAnim = {
+  hidden: { opacity: 0, y: -30 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  exit: { opacity: 0, y: -30, transition: { ease: "easeOut" } },
+};
+
+export { Container, Icon, Label, Link, SubMenu, subMenuAnim, Wrapper };

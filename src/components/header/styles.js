@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 const Container = styled.header`
@@ -7,7 +8,7 @@ const Container = styled.header`
   align-items: center;
 `;
 
-const Logo = styled.img`
+const Logo = styled(motion.img)`
   width: 65px;
   margin-right: 50px;
 `;
@@ -20,4 +21,9 @@ const Wrapper = styled.div`
   }
 `;
 
-export { Container, Logo, Wrapper };
+const logoAnim = {
+  hidden: { opacity: 0 },
+  show: { rotate: 360, opacity: 1, transition: { duration: 0.5 } },
+};
+
+export { Container, Logo, logoAnim, Wrapper };

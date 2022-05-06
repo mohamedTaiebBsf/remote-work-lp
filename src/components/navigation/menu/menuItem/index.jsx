@@ -1,5 +1,14 @@
+import { AnimatePresence } from "framer-motion";
 import React, { useState } from "react";
-import { Container, Icon, Label, Link, SubMenu, Wrapper } from "./styles";
+import {
+  Container,
+  Icon,
+  Label,
+  Link,
+  SubMenu,
+  subMenuAnim,
+  Wrapper,
+} from "./styles";
 
 function MenuItem({ children, hasSubMenu, isSub, label, leftIcon, link }) {
   const [openSubMenu, setOpenSubMenu] = useState(false);
@@ -20,7 +29,18 @@ function MenuItem({ children, hasSubMenu, isSub, label, leftIcon, link }) {
         {hasSubMenu ? <Label>{label}</Label> : <Link href={link}>{label}</Link>}
         {hasSubMenu && <Icon src={arrow} alt="rigthicon" />}
       </Wrapper>
-      {hasSubMenu && openSubMenu && <SubMenu>{children}</SubMenu>}
+      <AnimatePresence>
+        {hasSubMenu && openSubMenu && (
+          <SubMenu
+            variants={subMenuAnim}
+            initial="hidden"
+            animate="show"
+            exit="exit"
+          >
+            {children}
+          </SubMenu>
+        )}
+      </AnimatePresence>
     </Container>
   );
 }

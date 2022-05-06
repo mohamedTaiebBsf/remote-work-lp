@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -13,7 +14,7 @@ const Container = styled.div`
   }
 `;
 
-const Content = styled.div`
+const Content = styled(motion.div)`
   width: 50%;
   margin-right: 100px;
 
@@ -78,7 +79,7 @@ const Content = styled.div`
   }
 `;
 
-const Clients = styled.div`
+const Clients = styled(motion.div)`
   margin-top: 50px;
   display: flex;
   justify-content: space-between;
@@ -97,7 +98,7 @@ const Clients = styled.div`
   }
 `;
 
-const ImageWrapper = styled.div`
+const ImageWrapper = styled(motion.div)`
   width: 50%;
 
   @media (max-width: 1023px) {
@@ -125,4 +126,51 @@ const ImageWrapper = styled.div`
   }
 `;
 
-export { Clients, Container, Content, ImageWrapper };
+const contentAnim = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.5,
+      when: "beforeChildren",
+    },
+  },
+};
+
+const titleAnim = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { duration: 1 } },
+};
+
+const descAnim = {
+  hidden: { y: 50, opacity: 0 },
+  show: { y: 0, opacity: 1, transition: { duration: 0.75, ease: "easeOut" } },
+};
+
+const buttonAnim = {
+  hidden: { x: 200, opacity: 0 },
+  show: { x: 0, opacity: 1, transition: { duration: 0.75, ease: "linear" } },
+};
+
+const imageAnim = {
+  hidden: { scale: 0.3 },
+  show: { scale: 1, transition: { duration: 1 } },
+};
+
+const clientAnim = {
+  hidden: { x: "100%", opacity: 0 },
+  show: { x: 0, opacity: 1, transition: { duration: 0.5 } },
+};
+
+export {
+  buttonAnim,
+  clientAnim,
+  Clients,
+  Container,
+  Content,
+  contentAnim,
+  descAnim,
+  imageAnim,
+  ImageWrapper,
+  titleAnim,
+};
